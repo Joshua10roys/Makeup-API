@@ -1,15 +1,4 @@
-document.body.innerHTML = `<h2>Loading...</h2>`
-// async & await 
-async function getData() {
-    // url
-    const url = "http://makeup-api.herokuapp.com/api/v1/products.json";
-    try {
-        // fetching data
-        const data = await fetch(url);
-        const jsonData = await data.json();
-        // console.log(jsonData);
-
-        // Creating HTML tags #header #description #product #mainContainer
+// Creating HTML tags #header #description #product #mainContainer
         document.body.innerHTML = `
         <div id="header" class="header">
         <h1>Makeup API</h1><br>
@@ -29,7 +18,17 @@ async function getData() {
             <button onclick="" id="bronzer">Bronzer</button>
         </div>
         <div id="mainContainer" class="main-container">`
-
+        
+// async & await 
+async function getData() {
+    // url
+    const url = "http://makeup-api.herokuapp.com/api/v1/products.json";
+    try {
+        // fetching data
+        const data = await fetch(url);
+        const jsonData = await data.json();
+        // console.log(jsonData);
+        
         // items on open
         for (let i = 0; i < 30; i++) {
             displayData(jsonData[i]);
