@@ -1,3 +1,5 @@
+document.body.innerHTML = `<h2>Loading...</h2>`
+
 // Creating HTML tags #header #description #product #mainContainer
         document.body.innerHTML = `
         <div id="header" class="header">
@@ -29,6 +31,27 @@ async function getData() {
         const jsonData = await data.json();
         // console.log(jsonData);
         
+        // Creating HTML tags #header #description #product #mainContainer
+        document.body.innerHTML = `
+        <div id="header" class="header">
+        <h1>Makeup API</h1><br>
+        <p id="description">Creating a site by using Makeup API </p>
+        </div>
+         <div id="product">
+         <h3 id="sort">Select Product</h3>
+             <button onclick="" id="nail-polish">Nail Polish</button>
+             <button onclick="" id="lip_liner">Lip Liner</button>
+             <button onclick="" id="foundation">Foundation</button>
+             <button onclick="" id="eyebrow">Eyebrow</button>
+             <button onclick="" id="eyeshadow">Eyeshadow</button>
+             <button onclick="" id="lipstick">Lipstick</button>
+             <button onclick="" id="mascara">Mascara</button>
+             <button onclick="" id="eyeliner">Eyeliner</button>
+             <button onclick="" id="blush">Blush</button>
+             <button onclick="" id="bronzer">Bronzer</button>
+         </div>
+        <div id="mainContainer" class="main-container">`
+            
         // items on open
         for (let i = 0; i < 30; i++) {
             displayData(jsonData[i]);
